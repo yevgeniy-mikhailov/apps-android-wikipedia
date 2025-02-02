@@ -48,6 +48,7 @@ workRuntimeKtx = "2.10.0"
 composeBom = "2025.01.00"
 composeActivity = "1.10.0"
 composeViewModel = "2.8.7"
+kaspresso = "1.5.4"
 
 
 [libraries]
@@ -120,6 +121,7 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-activity = { module = "androidx.activity:activity-compose", version.ref = "composeActivity" }
 compose-view-model = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "composeViewModel" }
 compose-test = { module = "androidx.compose.ui:ui-test-junit4" }
+kaspresso = { module = "com.kaspersky.android-components:kaspresso", version.ref = "kaspresso" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
