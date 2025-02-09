@@ -1,5 +1,6 @@
 package org.wikipedia.homeworks.hw03
 
+import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
@@ -18,7 +19,7 @@ val addLanguagesButton = listOf(
 )
 
 val primaryText = listOf(
-    AppTextView::class.java, "primaryTextView", null
+    AppTextView::class.java, "primaryTextView", "onboarding_welcome_title_v2"
 )
 
 val secondaryText = listOf(
@@ -26,7 +27,7 @@ val secondaryText = listOf(
 )
 
 val imageView = listOf(
-    AppCompatImageView::class.java, "imageViewCentered", null
+    ImageView::class.java, "imageViewCentered", null
 )
 
 val recyclerView = listOf(
