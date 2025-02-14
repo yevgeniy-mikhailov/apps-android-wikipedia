@@ -1,5 +1,7 @@
 package org.wikipedia.homeworks.hw05
 
+import androidx.appcompat.widget.AppCompatImageView
+import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.progress.KSeekBar
 import io.github.kakaocup.kakao.switch.KSwitch
 import io.github.kakaocup.kakao.text.KButton
@@ -17,6 +19,13 @@ object TextZoom {
 }
 
 object ReadingFocusMode {
+    val icon = KImageView {
+        withParent {
+            withId(R.id.readingFocusModeContainer)
+        }
+        isInstanceOf(AppCompatImageView::class.java)
+    }
+
     val toggle = KSwitch {
         withId(R.id.theme_chooser_reading_focus_mode_switch)
     }
