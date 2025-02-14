@@ -46,37 +46,37 @@ class Schedule {
         return addSchedule(tempDay!!, ScheduleEntity(lesson, from, to))
     }
 
-    infix fun monday(fn: Schedule.() -> Unit) {
+    infix fun monday(fn: () -> Unit) {
         this.tempDay = Days.MONDAY
         fn()
     }
 
-    infix fun tuesday(fn: Schedule.() -> Unit) {
+    infix fun tuesday(fn: () -> Unit) {
         this.tempDay = Days.TUESDAY
         fn()
     }
 
-    infix fun wednesday(fn: Schedule.() -> Unit) {
+    infix fun wednesday(fn: () -> Unit) {
         this.tempDay = Days.WEDNESDAY
         fn()
     }
 
-    infix fun thursday(fn: Schedule.() -> Unit) {
+    infix fun thursday(fn: () -> Unit) {
         this.tempDay = Days.THURSDAY
         fn()
     }
 
-    infix fun friday(fn: Schedule.() -> Unit) {
+    infix fun friday(fn: () -> Unit) {
         this.tempDay = Days.FRIDAY
         fn()
     }
 
-    infix fun saturday(fn: Schedule.() -> Unit) {
+    infix fun saturday(fn: () -> Unit) {
         this.tempDay = Days.SATURDAY
         fn()
     }
 
-    infix fun sunday(fn: Schedule.() -> Unit) {
+    infix fun sunday(fn: () -> Unit) {
         this.tempDay = Days.SUNDAY
         fn()
     }
