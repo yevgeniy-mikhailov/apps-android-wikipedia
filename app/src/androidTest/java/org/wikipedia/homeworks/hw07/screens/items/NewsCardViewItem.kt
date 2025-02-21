@@ -6,6 +6,7 @@ import io.github.kakaocup.kakao.recycler.KRecyclerView
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
+import org.wikipedia.feed.news.NewsCardView
 import org.wikipedia.homeworks.hw07.screens.items.sub.NewsItemView
 
 class NewsCardViewItem(
@@ -21,8 +22,9 @@ class NewsCardViewItem(
     }
 
     val items = KRecyclerView(
+        parent = matcher,
         builder = {
-            withId(R.id.feed_view)
+            isInstanceOf(NewsCardView::class.java)
         },
         itemTypeBuilder = {
             itemType(::NewsItemView)

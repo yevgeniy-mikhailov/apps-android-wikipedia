@@ -1,6 +1,7 @@
 package org.wikipedia.homeworks.hw07.screens.items
 
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
 import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.recycler.KRecyclerView
 import io.github.kakaocup.kakao.text.KTextView
@@ -21,8 +22,9 @@ class TopReadCardViewItem(
     }
 
     val items = KRecyclerView(
+        parent = matcher,
         builder = {
-            withId(R.id.feed_view)
+            isInstanceOf(ConstraintLayout::class.java)
         },
         itemTypeBuilder = {
             itemType(::ListCardItemView)
