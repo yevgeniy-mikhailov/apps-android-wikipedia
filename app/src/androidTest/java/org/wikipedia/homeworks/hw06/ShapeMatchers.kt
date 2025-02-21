@@ -3,11 +3,10 @@ package org.wikipedia.homeworks.hw06
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
-import org.hamcrest.Matchers.anyOf
 import org.hamcrest.TypeSafeMatcher
 
 
-class IsInAllowedRange() : TypeSafeMatcher<Shape>() {
+class IsInAllowedRange : TypeSafeMatcher<Shape>() {
     private val allowedRange = 0.1f..100.0f
     override fun describeTo(description: Description) {
         description.appendText("allowedRange is $allowedRange")
@@ -38,7 +37,7 @@ class HasAnglesCount(private val angles: Int) : TypeSafeMatcher<Shape>() {
     }
 }
 
-class SidesCountIsEven() : TypeSafeMatcher<Shape>() {
+class SidesCountIsEven : TypeSafeMatcher<Shape>() {
     override fun describeTo(description: Description?) {
     }
 
@@ -47,27 +46,27 @@ class SidesCountIsEven() : TypeSafeMatcher<Shape>() {
     }
 }
 
-class LengthIsNegative() : TypeSafeMatcher<Shape>() {
+class LengthIsNegative : TypeSafeMatcher<Shape>() {
     override fun describeTo(description: Description) {
         description.appendText("length is negative")
     }
 
     override fun matchesSafely(item: Shape): Boolean {
-        return item.sideLength > 0
+        return item.sideLength < 0
     }
 }
 
-class SideCountIsNegative() : TypeSafeMatcher<Shape>() {
+class SideCountIsNegative : TypeSafeMatcher<Shape>() {
     override fun describeTo(description: Description) {
         description.appendText("sidesCount is negative")
     }
 
     override fun matchesSafely(item: Shape): Boolean {
-        return item.sidesCount > 0
+        return item.sidesCount < 0
     }
 }
 
-class MatcherBuilder() {
+class MatcherBuilder {
     private val listOfMatchers = mutableListOf<Matcher<Shape>>()
     operator fun invoke(function: MatcherBuilder.() -> Unit) {
         function()
@@ -98,7 +97,6 @@ class MatcherBuilder() {
         listOfMatchers.add(IsInAllowedRange())
     }
 
-    fun buildAllMatchers() = allOf(listOfMatchers)
-    fun buildAnyOfMatchers() = anyOf(listOfMatchers)
+    fun buildAllMatchers(): Matcher<Shape> = allOf(listOfMatchers)
 
 }
